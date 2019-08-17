@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Time Stuff</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <div class="row">
+<!-- Local Time -->
+        <div class="col s12 m6 l4 xl3 push-l2 push-xl3">
+          <div class="card teal darken-4 hoverable p-5">
+            <div class="card-content p-5">
+              <span class="card-title teal-text text-lighten-5 m-0 center-align">Local</span>
+              <span class="white-text text-l2" id="local-date"></span>
+              <span class="white-text text-l2 right" id="local-day"></span>
+              <br>
+              <span class="teal-text text-lighten-5 text-l2" id="local-time"></span>
+              <span class="teal-text text-lighten-5 text-l2 right" id="local-zone"></span>
+            </div>
+          </div>
+        </div>
+<!-- UTC Time -->
+        <div class="col s12 m6 l4 xl3 push-l2 push-xl3">
+          <div class="card red darken-5 hoverable p-5">
+            <div class="card-content p-5">
+              <span class="card-title red-text text-lighten-4 m-0 center-align">UTC</span>
+              <span class="white-text text-l2" id="UTC-date"></span>
+              <span class="white-text text-l2 right" id="UTC-day"></span>
+              <br>
+              <span class="red-text text-lighten-4 text-l2" id="UTC-time"></span>
+              <span class="red-text text-lighten-4 text-l2 right" id="UTC-zone"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+<!-- Choosen Time #1 // Default to AZ -->
+        <div class="col s12 m6 l4 xl3">
+          <div class="card blue-grey darken-2 hoverable p-5">
+            <div class="card-content p-5">
+              <span class="card-title m-0">
+                <div class="input-field m-0">
+                  <select id="choosen1" class="zone-select"></select>
+                </div>
+              </span>
+              <span class="white-text text-l2" id="choosen1-date"></span>
+              <span class="white-text text-l2 right" id="choosen1-day"></span>
+              <br>
+              <span class="lime-text text-accent-2 text-l2" id="choosen1-time"></span>
+              <span class="lime-text text-accent-2 text-l2 right" id="choosen1-zone"></span>
+            </div>
+          </div>
+        </div>
+<!-- Choosen Time #2 // Default to Central -->
+        <div class="col s12 m6 l4 xl3">
+          <div class="card blue-grey darken-2 hoverable p-5">
+            <div class="card-content p-5">
+              <span class="card-title m-0">
+                <div class="input-field m-0">
+                  <select id="choosen2" class="zone-select"></select>
+                </div>
+              </span>
+              <span class="white-text text-l2" id="choosen2-date"></span>
+              <span class="white-text text-l2 right" id="choosen2-day"></span>
+              <br>
+              <span class="lime-text text-accent-2 text-l2" id="choosen2-time"></span>
+              <span class="lime-text text-accent-2 text-l2 right" id="choosen2-zone"></span>
+            </div>
+          </div>
+        </div>
+<!-- Choosen Time #3 // Default to Eastern -->
+        <div class="col s12 m6 l4 xl3">
+          <div class="card blue-grey darken-2 hoverable p-5">
+            <div class="card-content p-5">
+              <span class="card-title m-0">
+                <div class="input-field m-0">
+                  <select id="choosen3" class="zone-select"></select>
+                </div>
+              </span>
+              <span class="white-text text-l2" id="choosen3-date"></span>
+              <span class="white-text text-l2 right" id="choosen3-day"></span>
+              <br>
+              <span class="lime-text text-accent-2 text-l2" id="choosen3-time"></span>
+              <span class="lime-text text-accent-2 text-l2 right" id="choosen3-zone"></span>
+            </div>
+          </div>
+        </div>
+<!-- Choosen Time #4 // Default to India -->
+        <div class="col s12 m6 l4 xl3">
+          <div class="card blue-grey darken-2 hoverable p-5">
+            <div class="card-content p-5">
+              <span class="card-title m-0">
+                <div class="input-field m-0">
+                  <select id="choosen4" class="zone-select"></select>
+                </div>
+              </span>
+              <span class="white-text text-l2" id="choosen4-date"></span>
+              <span class="white-text text-l2 right" id="choosen4-day"></span>
+              <br>
+              <span class="lime-text text-accent-2 text-l2" id="choosen4-time"></span>
+              <span class="lime-text text-accent-2 text-l2 right" id="choosen4-zone"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s10 m4 l2 push-s1 push-m4 push-l5 center-align">
+          <a id="restore-defaults" class="waves-effect waves-dark btn-small grey darken-1"><i class="material-icons left">refresh</i>Defaults</a>
+        </div>
+      </div>
+    </body>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.26/moment-timezone-with-data.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</html>
